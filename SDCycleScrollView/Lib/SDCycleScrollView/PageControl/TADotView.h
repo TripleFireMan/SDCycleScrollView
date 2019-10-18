@@ -9,5 +9,5 @@
 #import "TAAbstractDotView.h"
 
 @interface TADotView : TAAbstractDotView
-
+@property (nonatomic, assign) NSInteger test;
 @end
