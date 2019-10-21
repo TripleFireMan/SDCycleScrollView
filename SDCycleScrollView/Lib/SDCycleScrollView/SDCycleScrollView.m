@@ -36,7 +36,7 @@
 #import "SDWebImageManager.h"
 #import "UIImageView+WebCache.h"
 
-#define kCycleScrollViewInitialPageControlDotSize CGSizeMake(10, 10)
+#define kCycleScrollViewInitialPageControlDotSize CGSizeMake(5, 5)
 
 NSString * const ID = @"SDCycleScrollViewCell";
 
@@ -509,7 +509,7 @@ NSString * const ID = @"SDCycleScrollViewCell";
         }
         size = [pageControl sizeForNumberOfPages:self.imagePathsGroup.count];
     } else {
-        size = CGSizeMake(self.imagePathsGroup.count * self.pageControlDotSize.width * 1.5, self.pageControlDotSize.height);
+        size = CGSizeMake(self.imagePathsGroup.count * self.pageControlDotSize.width * 1, self.pageControlDotSize.height);
     }
     CGFloat x = (self.sd_width - size.width) * 0.5;
     if (self.pageControlAliment == SDCycleScrollViewPageContolAlimentRight) {
@@ -532,8 +532,8 @@ NSString * const ID = @"SDCycleScrollViewCell";
     self.pageControl.hidden = !_showPageControl;
     
     if (self.isHomeTop) {
-        pageControlFrame.size.width += 20;
-        pageControlFrame.size.height += 20;
+        pageControlFrame.size.width += 12;
+        pageControlFrame.size.height = 11.f;
         self.pageControl.backgroundColor = [UIColor grayColor];
         self.pageControl.layer.cornerRadius = pageControlFrame.size.height / 2.f;
         self.pageControl.backgroundColor = [UIColor colorWithRed:67.f/255.f green:67.f/255.f blue:67.f/255.f alpha:0.16];
