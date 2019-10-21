@@ -543,6 +543,8 @@ NSString * const ID = @"SDCycleScrollViewCell";
             frame.origin.y -= 4.f;
             frame.size.height += 8.f;
             self.pageCtlBackgroundView.frame = frame;
+            self.pageCtlBackgroundView.layer.cornerRadius = frame.size.height / 2.f;
+            self.pageCtlBackgroundView.layer.masksToBounds = YES;
             [self insertSubview:self.pageCtlBackgroundView belowSubview:self.pageControl];
         }
     }
