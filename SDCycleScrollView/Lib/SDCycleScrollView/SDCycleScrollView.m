@@ -525,8 +525,8 @@ NSString * const ID = @"SDCycleScrollViewCell";
     CGRect pageControlFrame = CGRectMake(x, y, size.width, size.height);
     pageControlFrame.origin.y -= self.pageControlBottomOffset;
     pageControlFrame.origin.x -= self.pageControlRightOffset;
-    pageControlFrame.size.width += 10;
-    pageControlFrame.size.height += 10;
+    pageControlFrame.size.width -= 10;
+    pageControlFrame.size.height -= 10;
     
 
     self.pageControl.frame = pageControlFrame;
