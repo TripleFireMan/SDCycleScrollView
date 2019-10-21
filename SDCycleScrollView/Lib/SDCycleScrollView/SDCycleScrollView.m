@@ -525,13 +525,15 @@ NSString * const ID = @"SDCycleScrollViewCell";
     CGRect pageControlFrame = CGRectMake(x, y, size.width, size.height);
     pageControlFrame.origin.y -= self.pageControlBottomOffset;
     pageControlFrame.origin.x -= self.pageControlRightOffset;
-    pageControlFrame.size.width -= 10;
-    pageControlFrame.size.height -= 10;
+    pageControlFrame.size.width += 20;
+    pageControlFrame.size.height += 20;
     
 
     self.pageControl.frame = pageControlFrame;
     self.pageControl.hidden = !_showPageControl;
     self.pageControl.backgroundColor = [UIColor grayColor];
+    self.pageControl.layer.cornerRadius = pageControlFrame.size.height / 2.f;
+    self.pageControl.backgroundColor = [UIColor colorWithRed:67.f/255.f green:67.f/255.f blue:67.f/255.f alpha:0.16];
     
     if (self.backgroundImageView) {
         self.backgroundImageView.frame = self.bounds;
