@@ -49,6 +49,7 @@ NSString * const ID = @"SDCycleScrollViewCell";
 @property (nonatomic, weak) NSTimer *timer;
 @property (nonatomic, assign) NSInteger totalItemsCount;
 @property (nonatomic, weak) UIControl *pageControl;
+@property (nonatomic, strong) UIView *pageCtlBackgroundView;
 
 @property (nonatomic, strong) UIImageView *backgroundImageView; // 当imageURLs为空时的背景图
 
@@ -532,12 +533,23 @@ NSString * const ID = @"SDCycleScrollViewCell";
     self.pageControl.hidden = !_showPageControl;
     
     if (self.isHomeTop) {
-        
+        if (!self.pageCtlBackgroundView) {
+            self.pageCtlBackgroundView = [UIView new];
+            self.pageCtlBackgroundView.backgroundColor = [UIColor colorWithRed:67.f/255.f green:67.f/255.f blue:67.f/255.f alpha:0.16];
+            [self addSubview:self.pageCtlBackgroundView];
+            CGRect frame = self.pageControl.frame;
+            frame.origin.x -= 8.f;
+            frame.size.width += 16.f;
+            frame.origin.y -= 4.f;
+            frame.size.height += 8.f;
+            self.pageCtlBackgroundView.frame = frame;
+            [self insertSubview:self.pageCtlBackgroundView belowSubview:self.pageControl];
+        }
     }
     
 //    pageControlFrame.size.width += 50.f;
 //    pageControlFrame.size.height += 20.f;
-    self.pageControl.backgroundColor = [UIColor grayColor];
+//    self.pageControl.backgroundColor = [UIColor grayColor];
 //    self.pageControl.layer.cornerRadius = pageControlFrame.size.height / 2.f;
 //    self.pageControl.backgroundColor = [UIColor colorWithRed:67.f/255.f green:67.f/255.f blue:67.f/255.f alpha:0.16];
 
