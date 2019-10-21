@@ -515,7 +515,7 @@ NSString * const ID = @"SDCycleScrollViewCell";
     if (self.pageControlAliment == SDCycleScrollViewPageContolAlimentRight) {
         x = self.mainView.sd_width - size.width - 10;
     }
-    CGFloat y = self.mainView.sd_height - size.height - 10;
+    CGFloat y = self.mainView.sd_height - size.height - 20;
     
     if ([self.pageControl isKindOfClass:[TAPageControl class]]) {
         TAPageControl *pageControl = (TAPageControl *)_pageControl;
@@ -526,10 +526,12 @@ NSString * const ID = @"SDCycleScrollViewCell";
     pageControlFrame.origin.y -= self.pageControlBottomOffset;
     pageControlFrame.origin.x -= self.pageControlRightOffset;
     pageControlFrame.size.width += 10;
-    pageControlFrame.size.height += 50;
+    pageControlFrame.size.height += 10;
+    
 
     self.pageControl.frame = pageControlFrame;
     self.pageControl.hidden = !_showPageControl;
+    self.pageControl.backgroundColor = [UIColor grayColor];
     
     if (self.backgroundImageView) {
         self.backgroundImageView.frame = self.bounds;
