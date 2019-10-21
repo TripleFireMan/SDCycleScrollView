@@ -195,6 +195,10 @@ typedef enum {
 
 /** 轮播文字label对齐方式 */
 @property (nonatomic, assign) NSTextAlignment titleLabelTextAlignment;
+/// 首页顶部
+@property (nonatomic, assign) BOOL isHomeTop;
+/// 首页底部
+@property (nonatomic, assign) BOOL isHomeBottom;
 
 /** 滚动手势禁用（文字轮播较实用） */
 - (void)disableScrollGesture;
