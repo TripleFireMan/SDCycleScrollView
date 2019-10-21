@@ -535,8 +535,8 @@ NSString * const ID = @"SDCycleScrollViewCell";
         
     }
     
-    pageControlFrame.size.width += 50;
-    pageControlFrame.size.height = 11.f;
+    pageControlFrame.size.width += 50.f;
+    pageControlFrame.size.height += 20.f;
     self.pageControl.backgroundColor = [UIColor grayColor];
     self.pageControl.layer.cornerRadius = pageControlFrame.size.height / 2.f;
     self.pageControl.backgroundColor = [UIColor colorWithRed:67.f/255.f green:67.f/255.f blue:67.f/255.f alpha:0.16];
